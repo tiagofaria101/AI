@@ -105,7 +105,21 @@ public class MapperAgent {
 			knownChargingStations.add((ChargingStation) obj);
 		}
 	}
-
+	public Int2D getNearestChargingStation(Int2D loc){
+		Int2D nearest = new Int2D();
+		double min = Double.MAX_VALUE;
+		if(knownChargingStations.isEmpty()==false){
+			for(ChargingStation cs : knownChargingStations) {
+				if (loc.distance(cs.loc) < min) {
+					min = loc.distance(cs.loc);
+					nearest = cs.loc;
+				}
+			}
+			return nearest;
+		}else{
+			return null;
+		}
+	}
 	public void addPrototype(SimObject obj, Class class1) {
 		for(Prototype p : this.knownObjects){
 			if(class1 == p.thisClass){

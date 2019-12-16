@@ -59,7 +59,7 @@ public class SimEnvironment implements Steppable{
 		
 		addExplorersRandomly(state);
 		//addExplorersCornersCenter(state);	// This always adds 8 Explorers
-		
+
 		buildRandomMap(state);
 		//buildDonutMap(state);
 		//buildStructuredMap(state);
@@ -110,7 +110,7 @@ public class SimEnvironment implements Steppable{
 	
 	private void buildRandomMap(SimState state) {
 		Class classes[] = {Wall.class, Tree.class, Bush.class, Water.class, House.class, ChargingStation.class};
-		int numberOfInstances[] = {400, 200, 200, 100, 20,500};
+		int numberOfInstances[] = {400, 200, 200, 100, 20,20};
 		Int2D loc;
 		
 		for (int i = 0; i < classes.length; i++) {
@@ -264,7 +264,7 @@ public class SimEnvironment implements Steppable{
 			}
 			state.finish();
 		}
-		
+
 		int stepCheckpoint = maxSteps/100;
 		if( step%stepCheckpoint == 0 ){
 			printStats();
@@ -275,6 +275,9 @@ public class SimEnvironment implements Steppable{
 		 */
 		for(ExplorerAgent agent : explorers){
 			agent.step(state);
+			if(step%2 == 0){
+				agent.expendEnergy();
+			}
 		}
 		
 	}

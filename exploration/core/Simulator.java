@@ -10,7 +10,7 @@ public class Simulator extends SimState{
 
 	private static final long serialVersionUID = 1L;
 	
-	private final static int N_EXPLORERS = 10;
+	private final static int N_EXPLORERS = 2;
 	private final static int N_CHARGING_STATIONS = 5;
 	public final static int WIDTH = 400;
 	public final static int HEIGHT = 300;

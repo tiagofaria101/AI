@@ -73,8 +73,8 @@ public class Viewer extends GUIState{
 	    }
 	    
 	    knownWorld.setPortrayalForClass(
-	        ExplorerAgent.class, new OrientedPortrayal2D(new SimplePortrayal2D(),0,2.0,
-	                Color.blue,
+	        ExplorerAgent.class, new OrientedPortrayal2D(new SimplePortrayal2D(),0,5,
+	                Color.CYAN,
 	                OrientedPortrayal2D.SHAPE_COMPASS) );
 
 

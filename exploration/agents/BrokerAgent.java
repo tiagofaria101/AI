@@ -15,17 +15,7 @@ public class BrokerAgent {
 		this.pointsOfInterest = new ArrayList<PointOfInterest>();
 		this.removedPoIs = new ArrayList<PointOfInterest>();
 	}
-	private Int2D getNearestChargingStation(Int2D loc){
-		Int2D nearest = new Int2D();
-		double min = Double.MAX_VALUE;
-		for(ChargingStation cs : mapper.knownChargingStations) {
-			if (loc.distance(cs.loc) < min) {
-				min = loc.distance(cs.loc);
-				nearest = cs.loc;
-			}
-		}
-		return nearest;
-	}
+
 	public Int2D requestTarget(Int2D agentPos) {
 		Int2D target = null;
 		PointOfInterest target_PoI = null;
